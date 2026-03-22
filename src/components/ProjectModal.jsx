@@ -1,7 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [breakpoint])
+  return isMobile
+}
+
 export default function ProjectModal({ project, onClose }) {
+  const isMobile = useIsMobile()
+
   // Close on Escape
   useEffect(() => {
     if (!project) return
@@ -30,7 +43,7 @@ export default function ProjectModal({ project, onClose }) {
           {/* Backdrop */}
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
 
-          {/* Modal content — scrollable within the overlay */}
+          {/* Modal content */}
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -49,7 +62,7 @@ export default function ProjectModal({ project, onClose }) {
               style={{ backgroundColor: 'var(--color-accent)' }}
             />
 
-            <div className="p-8">
+            <div className="p-5 sm:p-8">
               {/* Close button */}
               <button
                 onClick={onClose}
@@ -78,7 +91,7 @@ export default function ProjectModal({ project, onClose }) {
 
               {/* Title */}
               <h2
-                className="mb-2 text-2xl font-extrabold sm:text-3xl"
+                className="mb-2 text-xl font-extrabold sm:text-3xl"
                 style={{ color: 'var(--color-text)' }}
               >
                 {project.title}
@@ -101,7 +114,7 @@ export default function ProjectModal({ project, onClose }) {
                   Description
                 </h3>
                 <p
-                  className="text-base leading-relaxed"
+                  className="text-sm leading-relaxed sm:text-base"
                   style={{ color: 'var(--color-text)' }}
                 >
                   {project.description}
@@ -150,7 +163,7 @@ export default function ProjectModal({ project, onClose }) {
                 ))}
               </div>
 
-              {/* PDF Viewer */}
+              {/* PDF Section */}
               {project.pdfUrl && (
                 <div className="mt-6">
                   <h3
@@ -159,17 +172,43 @@ export default function ProjectModal({ project, onClose }) {
                   >
                     Documentation technique
                   </h3>
-                  <div
-                    className="overflow-hidden rounded-xl border"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <iframe
-                      src={project.pdfUrl}
-                      title={`Documentation - ${project.title}`}
-                      className="h-[600px] w-full"
-                      style={{ backgroundColor: '#fff' }}
-                    />
-                  </div>
+
+                  {isMobile ? (
+                    /* Mobile: open in new tab */
+                    <a
+                      href={project.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-5 text-center transition-colors duration-200"
+                      style={{
+                        borderColor: 'var(--color-accent)',
+                        color: 'var(--color-accent)',
+                      }}
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                      </svg>
+                      <span className="text-sm font-semibold">
+                        📄 Ouvrir le PDF
+                      </span>
+                    </a>
+                  ) : (
+                    /* Desktop: embedded iframe */
+                    <div
+                      className="overflow-hidden rounded-xl border"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <iframe
+                        src={project.pdfUrl}
+                        title={`Documentation - ${project.title}`}
+                        className="h-[600px] w-full"
+                        style={{ backgroundColor: '#fff' }}
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
