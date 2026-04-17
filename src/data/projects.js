@@ -93,4 +93,78 @@ export const projects = [
     tags: ['Développement', 'Gestion'],
     pdfUrl: '/doc_tech/Documentation_Technique_petit_jardinier.pdf',
   },
+  {
+    id: 'resto',
+    title: 'Projet Resto',
+    category: 'cours',
+    context: 'Projet universitaire',
+    description:
+      "Ce projet a consisté en la création d'un site web regroupant différents restaurants. Il intègre un système d'avis et une fonctionnalité d'authentification des utilisateurs, le tout développé selon une architecture MVC.",
+    missions: [
+      'Développement MVC en PHP',
+      'Création et gestion de la base de données MySQL',
+      "Mise en place de l'authentification et du système d'avis",
+    ],
+    tags: ['PHP', 'MySQL', 'MVC'],
+    pdfUrl: '/doc_tech/Documentation_Technique_Resto.pdf',
+  },
+  {
+    id: 'seminaire',
+    title: 'Projet Séminaire',
+    category: 'cours',
+    context: 'Projet universitaire',
+    description:
+      "Ce projet m'a permis d'apprendre et de mettre en pratique la création ainsi que la consommation d'une API REST développée en PHP.",
+    missions: [
+      "Création d'une API REST en PHP",
+      "Consommation des endpoints de l'API",
+    ],
+    tags: ['PHP', 'API REST'],
+    pdfUrl: '/doc_tech/Documentation_Technique_seminaire.pdf',
+  },
+  {
+    id: 'analim',
+    title: 'Projet Analim',
+    category: 'cours',
+    context: 'Projet universitaire',
+    description:
+      "Dans le cadre du projet Analim, basé sur une architecture MVC et une base de données MySQL, j'ai été assigné à la mission de facturation en utilisant le langage PHP orienté objet.",
+    missions: [
+      'Développement de la mission de facturation',
+      'Programmation PHP Orientée Objet',
+      'Conception MVC',
+    ],
+    tags: ['PHP', 'POO', 'MVC', 'MySQL'],
+    pdfUrl: '/doc_tech/Documentation_Technique_Analim.pdf',
+  },
+  {
+    id: 'utrillo',
+    title: 'Projet Utrillo',
+    category: 'cours',
+    context: 'Projet universitaire',
+    description:
+      "Développement d'une application mobile en Flutter interconnectée avec une API SpringBoot. J'ai eu la charge de la partie gestion utilisateur, incluant le module d'acceptation des comptes et le système d'attribution des rôles administrateur par un superAdmin.",
+    missions: [
+      'Développement frontend mobile avec Flutter',
+      'Gestion des utilisateurs et rôles avec SpringBoot',
+      'Mise en place du workflow de validation des comptes',
+    ],
+    tags: ['Flutter', 'SpringBoot', 'API'],
+    pdfUrl: '',
+  },
+  {
+    id: 'replication-bdd',
+    title: 'Réplication de base de données',
+    category: 'cours',
+    context: 'Projet système et réseau',
+    description:
+      "Mise en place d'une architecture de réplication de base de données à l'aide de MariaDB au sein d'un environnement virtualisé sous Debian 12.",
+    missions: [
+      'Configuration des machines virtuelles (VirtualBox)',
+      'Installation et paramétrage de Debian 12',
+      'Mise en place de la réplication Master/Slave MariaDB',
+    ],
+    tags: ['Debian 12', 'MariaDB', 'VirtualBox'],
+    pdfUrl: '/doc_tech/Documentation_Technique_Replication_BDD.pdf',
+  },
 ]
