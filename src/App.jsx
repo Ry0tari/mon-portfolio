@@ -14,10 +14,10 @@ export default function App() {
       <main>
         <HeroSection />
 
-        {/* Skills + Timeline in same logical block */}
+        {/* Parcours + Skills in same logical block */}
         <div>
-          <SkillsSection />
           <Timeline />
+          <SkillsSection />
         </div>
 
         <VeilleSection />

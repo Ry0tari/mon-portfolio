@@ -27,16 +27,6 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 max-w-3xl text-center">
-        {/* Greeting */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mb-3 text-sm font-medium uppercase tracking-[0.25em]"
-          style={{ color: 'var(--color-accent)' }}
-        >
-          Bienvenue sur mon portfolio
-        </motion.p>
 
         {/* Name */}
         <motion.h1
@@ -46,7 +36,7 @@ export default function HeroSection() {
           className="text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl"
           style={{ color: 'var(--color-text)' }}
         >
-          Bonjour, je suis{' '}
+          Bienvenue sur le portfolio de{' '}
           <span style={{ color: 'var(--color-accent)' }}>
             Labarde Kévin
           </span>
@@ -79,8 +69,9 @@ export default function HeroSection() {
           style={{ color: 'var(--color-text-secondary)' }}
         >
           Actuellement en BTS Services Informatiques aux Organisations (SIO) option SLAM,
-          je suis passionné par la programmation et l'intelligence artificielle.
-          Je maîtrise HTML, PHP et Java, et je dispose de solides bases en cybersécurité.
+          au lycée Suzanne Valadon. Je suis passionné par la programmation, la data analyse,
+          les modèles IA et la musique.
+
         </motion.p>
 
         {/* CTA Buttons */}

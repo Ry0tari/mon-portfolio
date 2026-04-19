@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext'
 
 const skills = [
   {
@@ -40,6 +41,23 @@ const skills = [
       { name: 'DBeaver', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg' },
     ],
   },
+  {
+    title: 'Modèles IA',
+    icon: IAIcon,
+    techs: [
+      { name: 'Gemini', src: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Cpath d='M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z'/%3E%3C/clipPath%3E%3Cfilter id='f'%3E%3CfeGaussianBlur stdDeviation='2.5'/%3E%3C/filter%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Cg filter='url(%23f)'%3E%3Cpolygon points='-24,-24 48,-24 12,12' fill='%23EA4335'/%3E%3Cpolygon points='48,-24 48,48 12,12' fill='%234285F4'/%3E%3Cpolygon points='-24,48 48,48 12,12' fill='%2334A853'/%3E%3Cpolygon points='-24,-24 -24,48 12,12' fill='%23FBBC05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E" },
+      { name: 'Claude Code', src: 'https://cdn.simpleicons.org/claude' },
+    ],
+  },
+  {
+    title: 'DevOps & Infra',
+    icon: DevOpsIcon,
+    techs: [
+      { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+      { name: 'GitHub', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg', invertDark: true },
+      { name: 'Linux', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
+    ],
+  },
 ]
 
 const cardVariants = {
@@ -52,6 +70,8 @@ const cardVariants = {
 }
 
 export default function SkillsSection() {
+  const { theme } = useTheme()
+
   return (
     <section id="skills" className="relative py-24 px-6">
       <div className="mx-auto max-w-6xl">
@@ -82,6 +102,8 @@ export default function SkillsSection() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {skills.map((skill, i) => {
             const Icon = skill.icon
+            const isLastOdd = skills.length % 2 !== 0 && i === skills.length - 1
+            
             return (
               <motion.div
                 key={skill.title}
@@ -91,7 +113,9 @@ export default function SkillsSection() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-40px' }}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className="group relative overflow-hidden rounded-2xl border p-6 transition-shadow duration-300 hover:shadow-xl"
+                className={`group relative overflow-hidden rounded-2xl border p-6 transition-shadow duration-300 hover:shadow-xl ${
+                  isLastOdd ? 'sm:col-span-2 sm:justify-self-center sm:w-[calc(50%-0.75rem)]' : ''
+                }`}
                 style={{
                   backgroundColor: 'var(--color-surface)',
                   borderColor: 'var(--color-border)',
@@ -131,7 +155,10 @@ export default function SkillsSection() {
                           src={tech.src}
                           alt={tech.name}
                           title={tech.name}
-                          className="h-11 w-11 transition-transform duration-200 group-hover/icon:scale-110"
+                          className="h-11 w-11 transition-all duration-200 group-hover/icon:scale-110"
+                          style={{
+                            filter: theme === 'dark' && tech.invertDark ? 'invert(1) brightness(1.5)' : 'none'
+                          }}
                           loading="lazy"
                         />
                         <span
@@ -196,6 +223,25 @@ function DataIcon({ size = 24 }) {
       <ellipse cx="12" cy="5" rx="9" ry="3" />
       <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
       <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+    </svg>
+  )
+}
+
+function IAIcon({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z" />
+    </svg>
+  )
+}
+
+function DevOpsIcon({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+      <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+      <line x1="6" y1="6" x2="6.01" y2="6" />
+      <line x1="6" y1="18" x2="6.01" y2="18" />
     </svg>
   )
 }

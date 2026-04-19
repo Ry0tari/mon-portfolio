@@ -4,6 +4,7 @@ import { useTheme } from '../context/ThemeContext'
 
 const navItems = [
   { id: 'accueil', label: 'Accueil', icon: HomeIcon },
+  { id: 'parcours', label: 'Parcours', icon: ParcoursIcon },
   { id: 'skills', label: 'Skills', icon: SkillsIcon },
   { id: 'veille', label: 'Veille', icon: VeilleIcon },
   { id: 'projets', label: 'Projets', icon: ProjectsIcon },
@@ -143,6 +144,15 @@ export default function Navbar() {
 }
 
 /* ─── Inline SVG Icon Components ─── */
+
+function ParcoursIcon({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+    </svg>
+  )
+}
 
 function HomeIcon({ size = 24 }) {
   return (

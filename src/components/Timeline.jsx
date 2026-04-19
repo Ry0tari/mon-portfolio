@@ -2,28 +2,11 @@ import { motion } from 'framer-motion'
 
 const timelineData = [
   {
-    year: '2024 — Présent',
-    title: 'BTS SIO option SLAM',
-    place: 'Lycée Suzanne Valadon, Limoges',
+    year: '2020 — 2021',
+    title: 'Baccalauréat',
+    place: 'Lycée Georges Cabanis, Brive',
     type: 'scolaire',
-    description:
-      'Services Informatiques aux Organisations, spécialité Solutions Logicielles et Applications Métiers.',
-  },
-  {
-    year: 'Janv. — Fév. 2026',
-    title: 'Stage — Conseil départemental de la Corrèze',
-    place: 'Tulle',
-    type: 'pro',
-    description:
-      'Second stage au service informatique du Conseil départemental.',
-  },
-  {
-    year: 'Mai — Juin 2025',
-    title: 'Stage — Conseil départemental de la Corrèze',
-    place: 'Tulle',
-    type: 'pro',
-    description:
-      'Stage au service informatique du Conseil départemental.',
+    description: 'Baccalauréat général — Maths et Physique-Chimie, Mention AB.',
   },
   {
     year: '2021 — 2023',
@@ -41,11 +24,46 @@ const timelineData = [
     description: 'Stage de découverte au sein de la SNCF.',
   },
   {
-    year: '2020 — 2021',
-    title: 'Baccalauréat',
-    place: 'Lycée Georges Cabanis, Brive',
+    year: '2024 — 2026',
+    title: 'BTS SIO option SLAM',
+    place: 'Lycée Suzanne Valadon, Limoges',
     type: 'scolaire',
-    description: 'Baccalauréat général — Maths et Physique-Chimie, Mention AB.',
+    description:
+      'Services Informatiques aux Organisations, spécialité Solutions Logicielles et Applications Métiers.',
+  },
+  {
+    year: 'Mai — Juin 2025',
+    title: 'Stage — Conseil départemental de la Corrèze',
+    place: 'Tulle',
+    type: 'pro',
+    description:
+      'Stage au service informatique du Conseil départemental.',
+    projectId: 'observatoire-bdd',
+    linkText: 'Voir le projet (BDD)',
+  },
+  {
+    year: 'Janv. — Fév. 2026',
+    title: 'Stage — Conseil départemental de la Corrèze',
+    place: 'Tulle',
+    type: 'pro',
+    description:
+      'Second stage au service informatique du Conseil départemental.',
+    projectId: 'observatoire-etl',
+    linkText: 'Voir le projet (ETL)',
+  },
+  {
+    year: 'À partir de Sept. 2026',
+    title: 'B3 Développeur en Intelligence Artificielle',
+    place: 'ECE, Bordeaux',
+    type: 'scolaire',
+    description: 'Poursuite d\'études (formation en alternance).',
+  },
+  {
+    year: 'À partir de Sept. 2026',
+    title: 'Alternance — Conseil départemental de la Corrèze',
+    place: 'Tulle',
+    type: 'pro',
+    description: 'Contrat d\'apprentissage au sein du service informatique.',
   },
 ]
 
@@ -63,7 +81,7 @@ const itemVariants = {
 
 export default function Timeline() {
   return (
-    <div className="mx-auto mt-20 max-w-4xl px-4">
+    <div id="parcours" className="mx-auto mt-20 max-w-4xl px-4 pt-10">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -208,6 +226,21 @@ function TimelineCard({ item }) {
       >
         {item.description}
       </p>
+      {item.projectId && (
+        <button
+          onClick={() => {
+            const el = document.getElementById('projets')
+            if (el) el.scrollIntoView({ behavior: 'smooth' })
+            setTimeout(() => {
+              window.dispatchEvent(new CustomEvent('openProject', { detail: item.projectId }))
+            }, 300)
+          }}
+          className="mt-4 inline-block text-sm font-semibold transition-all hover:underline cursor-pointer"
+          style={{ color: 'var(--color-accent)', background: 'none', border: 'none', padding: 0 }}
+        >
+          {item.linkText || 'Voir le projet'} {'->'}
+        </button>
+      )}
     </div>
   )
 }

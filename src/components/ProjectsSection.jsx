@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '../data/projects'
 import ProjectModal from './ProjectModal'
@@ -12,6 +12,18 @@ const filters = [
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('tous')
   const [selectedProject, setSelectedProject] = useState(null)
+
+  useEffect(() => {
+    const handleOpenProject = (e) => {
+      const pid = e.detail
+      const proj = projects.find((p) => p.id === pid)
+      if (proj) {
+        setSelectedProject(proj)
+      }
+    }
+    window.addEventListener('openProject', handleOpenProject)
+    return () => window.removeEventListener('openProject', handleOpenProject)
+  }, [])
 
   const filtered =
     activeFilter === 'tous'
