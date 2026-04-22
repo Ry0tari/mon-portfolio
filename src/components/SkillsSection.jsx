@@ -42,14 +42,6 @@ const skills = [
     ],
   },
   {
-    title: 'Modèles IA',
-    icon: IAIcon,
-    techs: [
-      { name: 'Gemini', src: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Cpath d='M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z'/%3E%3C/clipPath%3E%3Cfilter id='f'%3E%3CfeGaussianBlur stdDeviation='2.5'/%3E%3C/filter%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Cg filter='url(%23f)'%3E%3Cpolygon points='-24,-24 48,-24 12,12' fill='%23EA4335'/%3E%3Cpolygon points='48,-24 48,48 12,12' fill='%234285F4'/%3E%3Cpolygon points='-24,48 48,48 12,12' fill='%2334A853'/%3E%3Cpolygon points='-24,-24 -24,48 12,12' fill='%23FBBC05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E" },
-      { name: 'Claude Code', src: 'https://cdn.simpleicons.org/claude' },
-    ],
-  },
-  {
     title: 'DevOps & Infra',
     icon: DevOpsIcon,
     techs: [
