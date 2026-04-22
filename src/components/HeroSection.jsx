@@ -4,7 +4,6 @@ import { useTypewriter } from '../hooks/useTypewriter'
 const phrases = [
   'la data analyse',
   'le développement web',
-  'la musique',
   'les modèles IA',
 ]
 
@@ -36,7 +35,7 @@ export default function HeroSection() {
           className="text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl"
           style={{ color: 'var(--color-text)' }}
         >
-          Bienvenue sur le portfolio de{' '}
+          {' '}
           <span style={{ color: 'var(--color-accent)' }}>
             Labarde Kévin
           </span>
@@ -69,8 +68,7 @@ export default function HeroSection() {
           style={{ color: 'var(--color-text-secondary)' }}
         >
           Actuellement en BTS Services Informatiques aux Organisations (SIO) option SLAM,
-          au lycée Suzanne Valadon. Je suis passionné par la programmation, la data analyse,
-          les modèles IA et la musique.
+          au lycée Suzanne Valadon.
 
         </motion.p>
 
