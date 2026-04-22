@@ -41,6 +41,8 @@ const skills = [
       { name: 'DBeaver', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg' },
     ],
   },
+
+  
   {
     title: 'DevOps & Infra',
     icon: DevOpsIcon,
