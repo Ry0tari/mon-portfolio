@@ -120,34 +120,6 @@ function TimelineCard({ item }) {
 // ============================================================================
 const skills = [
   {
-    title: 'Front-End',
-    icon: FrontEndIcon,
-    techs: [
-      { name: 'HTML', src: 'https://cdn.simpleicons.org/html5' },
-      { name: 'CSS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg' },
-      { name: 'Tailwind', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-      { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
-    ],
-  },
-  {
-    title: 'Back-End',
-    icon: BackEndIcon,
-    techs: [
-      { name: 'PHP', src: 'https://cdn.simpleicons.org/php' },
-      { name: 'C#', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-plain.svg' },
-      { name: 'Java', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
-      { name: 'Spring Boot', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg' },
-      { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
-    ],
-  },
-  {
-    title: 'Mobile',
-    icon: MobileIcon,
-    techs: [
-      { name: 'Flutter', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
-    ],
-  },
-  {
     title: 'Data',
     icon: DataIcon,
     techs: [
@@ -156,6 +128,13 @@ const skills = [
       { name: 'FME', src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23009bda'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-weight='bold' font-size='20' fill='white'%3EFME%3C/text%3E%3C/svg%3E" },
       { name: 'ArcGIS', src: 'https://cdn.simpleicons.org/arcgis' },
       { name: 'DBeaver', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg' },
+    ],
+  },
+  {
+    title: 'Mobile',
+    icon: MobileIcon,
+    techs: [
+      { name: 'Flutter', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
     ],
   },
   {
@@ -173,6 +152,28 @@ const skills = [
       { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
       { name: 'GitHub', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg', invertDark: true },
       { name: 'Linux', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
+    ],
+  },
+
+  {
+    title: 'Back-End',
+    icon: BackEndIcon,
+    techs: [
+      { name: 'PHP', src: 'https://cdn.simpleicons.org/php' },
+      { name: 'C#', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-plain.svg' },
+      { name: 'Java', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+      { name: 'Spring Boot', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg' },
+      { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+    ],
+  },
+  {
+    title: 'Front-End',
+    icon: FrontEndIcon,
+    techs: [
+      { name: 'HTML', src: 'https://cdn.simpleicons.org/html5' },
+      { name: 'CSS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg' },
+      { name: 'Tailwind', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
     ],
   },
 ]
@@ -302,8 +303,8 @@ export default function JourneySection() {
               x1="0" y1={lineCoords.startY}
               x2="0" y2={lineCoords.endY}
             >
-              <stop offset="0%"   style={{ stopColor: 'var(--color-border)' }} />
-              <stop offset="70%"  style={{ stopColor: 'var(--color-border)' }} />
+              <stop offset="0%" style={{ stopColor: 'var(--color-border)' }} />
+              <stop offset="70%" style={{ stopColor: 'var(--color-border)' }} />
               <stop offset="100%" style={{ stopColor: 'var(--color-accent)' }} />
             </linearGradient>
           </defs>
