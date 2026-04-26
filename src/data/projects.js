@@ -90,8 +90,16 @@ export const projects = [
       "Développement de l'application",
       'Documentation technique',
     ],
-    tags: ['Développement', 'Gestion'],
+    tags: ['Framework Symfony', 'SQL', 'PHP', 'Modélisation'],
     pdfUrl: '/doc_tech/Documentation_Technique_petit_jardinier.pdf',
+    images: [
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153117.png',
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153323.png',
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153403.png',
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153447.png',
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153503.png',
+      '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153534.png',
+    ],
   },
   {
     id: 'resto',
@@ -107,6 +115,11 @@ export const projects = [
     ],
     tags: ['PHP', 'MySQL', 'MVC'],
     pdfUrl: '/doc_tech/Documentation_Technique_Resto.pdf',
+    images: [
+      '/capture_site/resto/Capture d\'écran 2026-04-26 153808.png',
+      '/capture_site/resto/Capture d\'écran 2026-04-26 153856.png',
+      '/capture_site/resto/Capture d\'écran 2026-04-26 153938.png',
+    ],
   },
   {
     id: 'seminaire',
@@ -121,6 +134,10 @@ export const projects = [
     ],
     tags: ['PHP', 'API REST'],
     pdfUrl: '/doc_tech/Documentation_Technique_seminaire.pdf',
+    images: [
+      '/capture_site/seminaire/Capture d\'écran 2026-04-26 154307.png',
+      '/capture_site/seminaire/Capture d\'écran 2026-04-26 154338.png',
+    ],
   },
   {
     id: 'analim',
@@ -136,6 +153,13 @@ export const projects = [
     ],
     tags: ['PHP', 'POO', 'MVC', 'MySQL'],
     pdfUrl: '/doc_tech/Documentation_Technique_Analim.pdf',
+    images: [
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154518.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154621.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154641.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154707.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154722.png',
+    ],
   },
   {
     id: 'utrillo',
@@ -150,7 +174,13 @@ export const projects = [
       'Mise en place du workflow de validation des comptes',
     ],
     tags: ['Flutter', 'SpringBoot', 'API'],
-    pdfUrl: '',
+    pdfUrl: '/doc_tech/Documentation_technique_Utribu.pdf',
+    isMobileFormat: true,
+    images: [
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151732.png',
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151808.png',
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151834.png',
+    ],
   },
   {
     id: 'replication-bdd',
@@ -168,3 +198,4 @@ export const projects = [
     pdfUrl: '/doc_tech/Documentation_Technique_Replication_BDD.pdf',
   },
 ]
+

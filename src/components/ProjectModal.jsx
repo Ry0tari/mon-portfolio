@@ -12,6 +12,48 @@ function useIsMobile(breakpoint = 768) {
   return isMobile
 }
 
+function ProjectCarousel({ images, isMobileFormat }) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [images])
+
+  if (!images || images.length === 0) return null
+
+  return (
+    <div className="w-full">
+      <h3
+        className="mb-3 text-sm font-bold uppercase tracking-wider"
+        style={{ color: 'var(--color-text-secondary)' }}
+      >
+        Aperçu
+      </h3>
+      <div 
+        className={`relative overflow-hidden rounded-xl border ${isMobileFormat ? 'mx-auto w-full max-w-[350px] lg:max-w-[400px] aspect-[1170/2532]' : 'w-full aspect-video'}`} 
+        style={{ backgroundColor: 'var(--color-bg-alt)', borderColor: 'var(--color-border)' }}
+      >
+        <AnimatePresence>
+          <motion.img
+            key={index}
+            src={images[index]}
+            alt="Capture du projet"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+        </AnimatePresence>
+      </div>
+    </div>
+  )
+}
+
 export default function ProjectModal({ project, onClose }) {
   const isMobile = useIsMobile()
 
@@ -50,7 +92,7 @@ export default function ProjectModal({ project, onClose }) {
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
             onClick={(e) => e.stopPropagation()}
-            className="relative z-10 my-auto w-full max-w-3xl rounded-2xl border shadow-2xl"
+            className="relative z-10 my-auto w-full max-w-[95%] lg:max-w-6xl rounded-2xl border shadow-2xl"
             style={{
               backgroundColor: 'var(--color-surface)',
               borderColor: 'var(--color-border)',
@@ -163,9 +205,18 @@ export default function ProjectModal({ project, onClose }) {
                 ))}
               </div>
 
-              {/* PDF Section */}
-              {project.pdfUrl && (
-                <div className="mt-6">
+              {/* Conteneur dynamique : côte à côte pour mobile, empilé pour web */}
+              <div className={`mt-8 flex flex-col ${project.isMobileFormat ? 'lg:flex-row' : ''} lg:items-start gap-8`}>
+                {/* Carousel Section */}
+                {project.images && project.images.length > 0 && (
+                  <div className={`w-full ${project.isMobileFormat && project.pdfUrl ? 'lg:w-1/2' : ''}`}>
+                    <ProjectCarousel images={project.images} isMobileFormat={project.isMobileFormat} />
+                  </div>
+                )}
+
+                {/* PDF Section */}
+                {project.pdfUrl && (
+                  <div className={`w-full ${project.isMobileFormat && project.images && project.images.length > 0 ? 'lg:w-1/2' : ''}`}>
                   <h3
                     className="mb-3 text-sm font-bold uppercase tracking-wider"
                     style={{ color: 'var(--color-text-secondary)' }}
@@ -204,7 +255,7 @@ export default function ProjectModal({ project, onClose }) {
                       <iframe
                         src={project.pdfUrl}
                         title={`Documentation - ${project.title}`}
-                        className="h-[600px] w-full"
+                        className="h-[800px] w-full"
                         style={{ backgroundColor: '#fff' }}
                       />
                     </div>
@@ -212,9 +263,10 @@ export default function ProjectModal({ project, onClose }) {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
-      )}
+      </motion.div>
+    )}
     </AnimatePresence>
   )
 }
