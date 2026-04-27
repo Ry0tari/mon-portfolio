@@ -163,7 +163,7 @@ export const projects = [
   },
   {
     id: 'utrillo',
-    title: 'Projet Utrillo',
+    title: 'Projet Utribu',
     category: 'cours',
     context: 'Projet universitaire',
     description:

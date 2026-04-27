@@ -18,12 +18,12 @@ const tools = [
 const axes = [
   {
     id: 'modeles-ia',
-    title: 'Modèles IA (Évolution technique)',
+    title: 'Modèles IA',
     description: 'Suivi des avancées des LLM/SLM, de l\'Open Source (Mistral, LLaMA) et des capacités de raisonnement des modèles.'
   },
   {
     id: 'slam',
-    title: 'Impact de l\'IA sur le développement (SLAM)',
+    title: 'Impact de l\'IA sur le développement',
     description: 'Analyse de la transition vers le "Prompt Engineering" et l\'utilisation d\'assistants intelligents (Cursor, Claude Code).'
   },
   {
@@ -135,13 +135,13 @@ export default function VeilleSection() {
           <h3 className="mb-8 border-b pb-2 text-2xl font-bold" style={{ color: 'var(--color-text)', borderColor: 'var(--color-border)' }}>
             Axes de Recherche & Articles Récents
           </h3>
-          
+
           <div className="flex flex-col gap-14">
             {axes.map((axe, index) => {
               const axisArticles = articles.filter(a => a.axisId === axe.id)
 
               return (
-                <motion.div 
+                <motion.div
                   key={axe.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
