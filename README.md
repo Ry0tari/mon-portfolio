@@ -1,16 +1,37 @@
-# React + Vite
+# Kévin Labarde — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel : parcours, compétences et projets.
 
-Currently, two official plugins are available:
+**En ligne :** https://mon-portfolio-6c5m.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- [React 19](https://react.dev) + [Vite](https://vite.dev)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Framer Motion](https://motion.dev) pour les animations
+- Déployé sur [Vercel](https://vercel.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Lancer le projet en local
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Structure
+
+```
+src/
+├── components/   Sections de la page (accueil, parcours & compétences, projets, contact) et navigation
+├── context/      Thème clair / sombre (suit le thème du système par défaut)
+├── data/         Données des projets
+└── hooks/        Effet machine à écrire de l'accueil
+public/
+├── doc_tech/     Documentations techniques des projets (PDF)
+└── capture_site/ Captures d'écran des projets
+```
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/k%C3%A9vin-labarde-ba3821295/)
+- kevinlabarde4@gmail.com

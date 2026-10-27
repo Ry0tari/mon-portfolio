@@ -3,43 +3,15 @@ export const categoryLabels = {
   stage: 'Professionnel',
 }
 
+// Ordre d'affichage : expériences professionnelles d'abord, puis projets académiques du plus récent au plus ancien
 export const projects = [
-  {
-    id: 'karate',
-    title: 'Karaté',
-    category: 'cours',
-    context: 'Projet scolaire — Application C# de gestion de compétition.',
-    description:
-      "Le projet karaté va permettre à la ligue De Lorraine de Karaté d'organiser tout au long de l'année des compétitions de « Kata » dans les différents clubs qui lui sont affiliés et de numériser l'ensemble des informations pour une gestion plus simple et rapide.",
-    missions: [
-      'Gestion des clubs',
-      'Consultation pour chaque club de la liste de ses adhérents',
-      'Menu général',
-    ],
-    tags: ['C#', 'Visual Studio'],
-    pdfUrl: '/doc_tech/Documentation technique KARATE.pdf',
-  },
-  {
-    id: 'observatoire-bdd',
-    title: "Observatoire de l'eau (BDD)",
-    category: 'stage',
-    context: 'Stage 2025 — Gestion de base de données.',
-    description:
-      "Le projet de l'observatoire de l'eau est une demande du président du conseil départemental pour avoir un meilleur suivi de la qualité de l'eau mais aussi des espèces présentes dans ces eaux. J'ai eu pour mission de gérer une partie de la base de données dans le cadre de ce projet.",
-    missions: [
-      'Analyse de table',
-      'Création de table pour optimiser la donnée',
-      "Gestion d'enregistrement",
-    ],
-    tags: ['DBeaver', 'DuckDB', 'SQL'],
-  },
   {
     id: 'observatoire-etl',
     title: "Observatoire de l'eau (ETL)",
     category: 'stage',
-    context: 'Stage 2026 — Gestion de flux de données hydrométriques via ETL.',
+    context: 'Stage 2026 — Conseil départemental de la Corrèze — Flux de données hydrométriques via ETL.',
     description:
-      "Le projet de l'observatoire de l'eau est une demande du président du conseil départemental pour avoir un meilleur suivi de la qualité de l'eau mais aussi des espèces présentes dans ces eaux. J'ai eu pour mission de gérer des flux de données venant de différentes sources et j'ai dû effectuer différents traitements sur ces derniers.",
+      "L'Observatoire de l'eau répond à une demande du président du Conseil départemental : mieux suivre la qualité de l'eau et les espèces qui y vivent. J'ai pris en charge les flux de données provenant de différentes sources, de leur intégration jusqu'à leur publication cartographique.",
     missions: [
       "Refonte, maintenance et optimisation de flux d'intégration de données (ETL)",
       "Mise en place d'un système global de traçabilité et de logs applicatifs",
@@ -49,22 +21,79 @@ export const projects = [
       'Automatisation des mises à jour de services cartographiques sur ArcGIS Enterprise',
       'Développement de modules de purge et de nettoyage système post-traitement',
     ],
-    tags: ['FME', 'ETL', 'ArcGIS'],
+    tags: ['FME', 'ETL', 'ArcGIS', 'API REST'],
     pdfUrl: '/doc_tech/Bilan_Stage_2.pdf',
+  },
+  {
+    id: 'observatoire-bdd',
+    title: "Observatoire de l'eau (BDD)",
+    category: 'stage',
+    context: 'Stage 2025 — Conseil départemental de la Corrèze — Gestion de base de données.',
+    description:
+      "L'Observatoire de l'eau répond à une demande du président du Conseil départemental : mieux suivre la qualité de l'eau et les espèces qui y vivent. J'ai été chargé d'une partie de la base de données du projet.",
+    missions: [
+      'Analyse des tables existantes',
+      'Création de tables pour optimiser la structure des données',
+      'Gestion et contrôle des enregistrements',
+    ],
+    tags: ['DBeaver', 'DuckDB', 'SQL'],
+  },
+  {
+    id: 'utrillo',
+    title: 'Utribu',
+    category: 'cours',
+    context: 'BTS SIO — Application mobile Flutter connectée à une API Spring Boot.',
+    description:
+      "Développement d'une application mobile en Flutter interconnectée avec une API Spring Boot. J'ai eu la charge de la gestion des utilisateurs : le module d'acceptation des comptes et l'attribution des rôles administrateur par un super-administrateur.",
+    missions: [
+      'Développement frontend mobile avec Flutter',
+      'Gestion des utilisateurs et rôles avec Spring Boot',
+      'Mise en place du workflow de validation des comptes',
+    ],
+    tags: ['Flutter', 'Spring Boot', 'API', 'PostgreSQL', 'MongoDB'],
+    pdfUrl: '/doc_tech/Documentation_technique_Utribu.pdf',
+    isMobileFormat: true,
+    images: [
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151732.png',
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151808.png',
+      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151834.png',
+    ],
+  },
+  {
+    id: 'analim',
+    title: 'Analim',
+    category: 'cours',
+    context: "BTS SIO — Module de facturation d'une application web MVC.",
+    description:
+      "Analim est une application web basée sur une architecture MVC et une base de données MySQL. J'y ai développé le module de facturation en PHP orienté objet.",
+    missions: [
+      'Développement du module de facturation',
+      'Programmation PHP orientée objet',
+      'Conception MVC',
+    ],
+    tags: ['PHP', 'POO', 'MVC', 'MySQL'],
+    pdfUrl: '/doc_tech/Documentation_Technique_Analim.pdf',
+    images: [
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154518.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154621.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154641.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154707.png',
+      '/capture_site/analim/Capture d\'écran 2026-04-26 154722.png',
+    ],
   },
   {
     id: 'petit-jardinier',
     title: 'Le Petit Jardinier',
     category: 'cours',
-    context: 'Projet scolaire — Application de gestion.',
+    context: 'BTS SIO — Application web de gestion avec Symfony.',
     description:
-      "Projet de développement d'une application de gestion pour Le Petit Jardinier.",
+      "Développement d'une application de gestion pour Le Petit Jardinier, de l'analyse des besoins à la documentation technique.",
     missions: [
-      'Analyse des besoins',
-      "Développement de l'application",
-      'Documentation technique',
+      'Analyse des besoins et modélisation',
+      "Développement de l'application avec Symfony",
+      'Rédaction de la documentation technique',
     ],
-    tags: ['Framework Symfony', 'SQL', 'PHP', 'Modélisation'],
+    tags: ['Symfony', 'PHP', 'SQL', 'Modélisation'],
     pdfUrl: '/doc_tech/Documentation_Technique_petit_jardinier.pdf',
     images: [
       '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153117.png',
@@ -79,7 +108,7 @@ export const projects = [
     id: 'seminaire',
     title: 'Séminaire',
     category: 'cours',
-    context: 'Projet universitaire',
+    context: "BTS SIO — Création et consommation d'une API REST en PHP.",
     description:
       "Ce projet m'a permis d'apprendre et de mettre en pratique la création ainsi que la consommation d'une API REST développée en PHP.",
     missions: [
@@ -94,47 +123,18 @@ export const projects = [
     ],
   },
   {
-    id: 'analim',
-    title: 'Analim',
+    id: 'karate',
+    title: 'Karaté',
     category: 'cours',
-    context: 'Projet universitaire',
+    context: 'BTS SIO — Application C# de gestion de compétitions.',
     description:
-      "Dans le cadre du projet Analim, basé sur une architecture MVC et une base de données MySQL, j'ai été assigné à la mission de facturation en utilisant le langage PHP orienté objet.",
+      "Application permettant à la Ligue de Lorraine de Karaté d'organiser tout au long de l'année des compétitions de « Kata » dans ses clubs affiliés, et de numériser l'ensemble des informations pour une gestion plus simple et plus rapide.",
     missions: [
-      'Développement de la mission de facturation',
-      'Programmation PHP Orientée Objet',
-      'Conception MVC',
+      'Gestion des clubs',
+      'Consultation de la liste des adhérents de chaque club',
+      "Développement du menu général de l'application",
     ],
-    tags: ['PHP', 'POO', 'MVC', 'MySQL'],
-    pdfUrl: '/doc_tech/Documentation_Technique_Analim.pdf',
-    images: [
-      '/capture_site/analim/Capture d\'écran 2026-04-26 154518.png',
-      '/capture_site/analim/Capture d\'écran 2026-04-26 154621.png',
-      '/capture_site/analim/Capture d\'écran 2026-04-26 154641.png',
-      '/capture_site/analim/Capture d\'écran 2026-04-26 154707.png',
-      '/capture_site/analim/Capture d\'écran 2026-04-26 154722.png',
-    ],
-  },
-  {
-    id: 'utrillo',
-    title: 'Utribu',
-    category: 'cours',
-    context: 'Projet universitaire',
-    description:
-      "Développement d'une application mobile en Flutter interconnectée avec une API SpringBoot. J'ai eu la charge de la partie gestion utilisateur, incluant le module d'acceptation des comptes et le système d'attribution des rôles administrateur par un superAdmin.",
-    missions: [
-      'Développement frontend mobile avec Flutter',
-      'Gestion des utilisateurs et rôles avec SpringBoot',
-      'Mise en place du workflow de validation des comptes',
-    ],
-    tags: ['Flutter', 'SpringBoot', 'API', 'PostgreSQL', 'MongoDB'],
-    pdfUrl: '/doc_tech/Documentation_technique_Utribu.pdf',
-    isMobileFormat: true,
-    images: [
-      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151732.png',
-      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151808.png',
-      '/capture_site/Utribu/Capture d\'écran 2026-04-26 151834.png',
-    ],
+    tags: ['C#', 'Visual Studio'],
+    pdfUrl: '/doc_tech/Documentation technique KARATE.pdf',
   },
 ]
-
