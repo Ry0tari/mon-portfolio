@@ -53,14 +53,14 @@ const timelineData = [
     linkText: 'Voir le projet (ETL)',
   },
   {
-    year: 'À partir de Sept. 2026',
+    year: 'Depuis Sept. 2026',
     title: 'B3 Développeur en Intelligence Artificielle',
     place: 'ECE, Bordeaux',
     type: 'scolaire',
     description: 'Poursuite d\'études (formation en alternance).',
   },
   {
-    year: 'À partir de Sept. 2026',
+    year: 'Depuis Sept. 2026',
     title: 'Alternance — Conseil départemental de la Corrèze',
     place: 'Tulle',
     type: 'pro',

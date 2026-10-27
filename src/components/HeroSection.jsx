@@ -67,8 +67,8 @@ export default function HeroSection() {
           className="mx-auto mt-8 max-w-xl text-base leading-relaxed sm:text-lg"
           style={{ color: 'var(--color-text-secondary)' }}
         >
-          Actuellement en BTS Services Informatiques aux Organisations (SIO) option SLAM,
-          au lycée Suzanne Valadon.
+          Actuellement en B3 Développeur en Intelligence Artificielle à l'ECE Bordeaux,
+          en alternance au service informatique du Conseil départemental de la Corrèze.
 
         </motion.p>
 

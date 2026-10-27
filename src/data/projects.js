@@ -49,21 +49,6 @@ export const projects = [
     pdfUrl: '/doc_tech/Bilan_Stage_2.pdf',
   },
   {
-    id: 'service-college',
-    title: 'Service Collège',
-    category: 'stage',
-    context: 'Stage 2025 — Intervention et préparation d\'équipement pour les collèges.',
-    description:
-      "J'ai accompagné le service collège dans différentes missions sur le terrain ou bien participé à la préparation de l'équipement.",
-    missions: [
-      'Ghostage de PC',
-      "Intégration de tablettes dans une MDM",
-      'Interventions techniques sur site',
-    ],
-    tags: ['Veeam', 'Putty', 'MDM'],
-    pdfUrl: '/doc_tech/Documentation_technique_Collège.pdf',
-  },
-  {
     id: 'petit-jardinier',
     title: 'Le Petit Jardinier',
     category: 'cours',
