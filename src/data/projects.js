@@ -83,15 +83,16 @@ export const projects = [
   },
   {
     id: 'petit-jardinier',
-    title: 'Le Petit Jardinier',
+    title: "Le P'tit Jardinier",
     category: 'cours',
-    context: 'BTS SIO — Application web de gestion avec Symfony.',
+    context: 'BTS SIO — Application web de devis en ligne pour une entreprise de paysagisme.',
     description:
-      "Développement d'une application de gestion pour Le Petit Jardinier, de l'analyse des besoins à la documentation technique.",
+      "Application web métier pour une entreprise de paysagisme spécialisée dans l'entretien des espaces verts et la taille de haies. Elle remplace un processus de devis papier et téléphone par un portail client disponible 24h/24, où chacun estime en temps réel le coût de sa prestation et crée son devis en autonomie.",
     missions: [
-      'Analyse des besoins et modélisation',
-      "Développement de l'application avec Symfony",
-      'Rédaction de la documentation technique',
+      'Simulateur de devis en temps réel selon les dimensions des haies (hauteur, longueur)',
+      'Espace client pour la création et le suivi des devis',
+      "Tableau de bord professionnel : vue globale de l'activité, gestion des clients et du catalogue tarifaire",
+      'Analyse des besoins, modélisation et documentation technique',
     ],
     tags: ['Symfony', 'PHP', 'SQL', 'Modélisation'],
     pdfUrl: '/doc_tech/Documentation_Technique_petit_jardinier.pdf',
