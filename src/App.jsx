@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import JourneySection from './components/JourneySection'
-import VeilleSection from './components/VeilleSection'
 import ProjectsSection from './components/ProjectsSection'
 import ContactSection from './components/ContactSection'
 
@@ -16,7 +15,6 @@ export default function App() {
         {/* Parcours + Skills unifiés pour une animation fluide */}
         <JourneySection />
 
-        <VeilleSection />
         <ProjectsSection />
         <ContactSection />
       </main>

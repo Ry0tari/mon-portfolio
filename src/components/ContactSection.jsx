@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const CONTACT_EMAIL = 'kevinlabarde4@gmail.com'
+
 const socialLinks = [
   {
     name: 'Email',
-    href: 'mailto:kevin.labarde@example.com',
+    href: `mailto:${CONTACT_EMAIL}`,
     icon: EmailIcon,
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/',
+    href: 'https://www.linkedin.com/in/k%C3%A9vin-labarde-ba3821295/',
     icon: LinkedInIcon,
   },
   {
@@ -29,7 +31,10 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Pour l'instant on simule l'envoi
+    // Ouvre le client mail du visiteur avec le message pré-rempli
+    const subject = `Contact portfolio — ${formData.name}`
+    const body = `${formData.message}\n\n${formData.name}\n${formData.email}`
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
     setFormData({ name: '', email: '', message: '' })
@@ -173,7 +178,7 @@ export default function ContactSection() {
                   'var(--color-accent)')
               }
             >
-              {submitted ? '✓ Message envoyé !' : 'Envoyer le message'}
+              {submitted ? '✓ Ouverture de votre messagerie…' : 'Envoyer le message'}
             </motion.button>
           </motion.form>
 
@@ -196,7 +201,7 @@ export default function ContactSection() {
               <motion.a
                 key={name}
                 href={href}
-                target="_blank"
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
                 rel="noopener noreferrer"
                 whileHover={{ x: 4, scale: 1.05 }}
                 className="flex items-center gap-3 rounded-xl border px-5 py-3 transition-shadow duration-200 hover:shadow-md"

@@ -64,21 +64,6 @@ export const projects = [
     pdfUrl: '/doc_tech/Documentation_technique_Collège.pdf',
   },
   {
-    id: 'glpi',
-    title: 'Installation GLPI',
-    category: 'cours',
-    context: 'Projet scolaire — Mise en place de la gestion d\'un parc informatique.',
-    description:
-      "Durant ce projet, on devait mettre en place la gestion d'un parc informatique au travers de l'outil GLPI.",
-    missions: [
-      'Installation de GLPI sur un serveur',
-      "Installation d'un agent GLPI sur Linux",
-      'Création et résolution de tickets',
-    ],
-    tags: ['GLPI', 'Linux', 'Debian'],
-    pdfUrl: '/doc_tech/Documentation_gestion_patrimoine_info.pdf',
-  },
-  {
     id: 'petit-jardinier',
     title: 'Le Petit Jardinier',
     category: 'cours',
@@ -99,26 +84,6 @@ export const projects = [
       '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153447.png',
       '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153503.png',
       '/capture_site/petit_jardinier/Capture d\'écran 2026-04-26 153534.png',
-    ],
-  },
-  {
-    id: 'resto',
-    title: 'Projet Resto',
-    category: 'cours',
-    context: 'Projet universitaire',
-    description:
-      "Ce projet a consisté en la création d'un site web regroupant différents restaurants. Il intègre un système d'avis et une fonctionnalité d'authentification des utilisateurs, le tout développé selon une architecture MVC.",
-    missions: [
-      'Développement MVC en PHP',
-      'Création et gestion de la base de données MySQL',
-      "Mise en place de l'authentification et du système d'avis",
-    ],
-    tags: ['PHP', 'MySQL', 'MVC'],
-    pdfUrl: '/doc_tech/Documentation_Technique_Resto.pdf',
-    images: [
-      '/capture_site/resto/Capture d\'écran 2026-04-26 153808.png',
-      '/capture_site/resto/Capture d\'écran 2026-04-26 153856.png',
-      '/capture_site/resto/Capture d\'écran 2026-04-26 153938.png',
     ],
   },
   {
@@ -181,21 +146,6 @@ export const projects = [
       '/capture_site/Utribu/Capture d\'écran 2026-04-26 151808.png',
       '/capture_site/Utribu/Capture d\'écran 2026-04-26 151834.png',
     ],
-  },
-  {
-    id: 'replication-bdd',
-    title: 'Réplication de base de données',
-    category: 'cours',
-    context: 'Projet système et réseau',
-    description:
-      "Mise en place d'une architecture de réplication de base de données à l'aide de MariaDB au sein d'un environnement virtualisé sous Debian 12.",
-    missions: [
-      'Configuration des machines virtuelles (VirtualBox)',
-      'Installation et paramétrage de Debian 12',
-      'Mise en place de la réplication Master/Slave MariaDB',
-    ],
-    tags: ['Debian 12', 'MariaDB', 'VirtualBox'],
-    pdfUrl: '/doc_tech/Documentation_Technique_Replication_BDD.pdf',
   },
 ]
 
