@@ -1,7 +1,12 @@
+export const categoryLabels = {
+  cours: 'Académique',
+  stage: 'Professionnel',
+}
+
 export const projects = [
   {
     id: 'karate',
-    title: 'Projet Karaté',
+    title: 'Karaté',
     category: 'cours',
     context: 'Projet scolaire — Application C# de gestion de compétition.',
     description:
@@ -27,7 +32,6 @@ export const projects = [
       "Gestion d'enregistrement",
     ],
     tags: ['DBeaver', 'DuckDB', 'SQL'],
-    pdfUrl: '/doc_tech/Documentation_technique_observatoire_eau.pdf',
   },
   {
     id: 'observatoire-etl',
@@ -73,7 +77,7 @@ export const projects = [
   },
   {
     id: 'seminaire',
-    title: 'Projet Séminaire',
+    title: 'Séminaire',
     category: 'cours',
     context: 'Projet universitaire',
     description:
@@ -91,7 +95,7 @@ export const projects = [
   },
   {
     id: 'analim',
-    title: 'Projet Analim',
+    title: 'Analim',
     category: 'cours',
     context: 'Projet universitaire',
     description:
@@ -113,7 +117,7 @@ export const projects = [
   },
   {
     id: 'utrillo',
-    title: 'Projet Utribu',
+    title: 'Utribu',
     category: 'cours',
     context: 'Projet universitaire',
     description:
@@ -123,7 +127,7 @@ export const projects = [
       'Gestion des utilisateurs et rôles avec SpringBoot',
       'Mise en place du workflow de validation des comptes',
     ],
-    tags: ['Flutter', 'SpringBoot', 'API'],
+    tags: ['Flutter', 'SpringBoot', 'API', 'PostgreSQL', 'MongoDB'],
     pdfUrl: '/doc_tech/Documentation_technique_Utribu.pdf',
     isMobileFormat: true,
     images: [

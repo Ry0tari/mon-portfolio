@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { categoryLabels } from '../data/projects'
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false)
@@ -128,7 +129,7 @@ export default function ProjectModal({ project, onClose }) {
                   color: 'var(--color-accent)',
                 }}
               >
-                {project.category}
+                {categoryLabels[project.category]}
               </span>
 
               {/* Title */}

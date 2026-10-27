@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useTypewriter } from '../hooks/useTypewriter'
 
 const phrases = [
-  'la data analyse',
+  'la donnée',
   'le développement web',
   'les modèles IA',
 ]
@@ -37,7 +37,7 @@ export default function HeroSection() {
         >
           {' '}
           <span style={{ color: 'var(--color-accent)' }}>
-            Labarde Kévin
+            Kévin Labarde
           </span>
         </motion.h1>
 

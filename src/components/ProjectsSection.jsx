@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { projects } from '../data/projects'
+import { projects, categoryLabels } from '../data/projects'
 import ProjectModal from './ProjectModal'
 
 const filters = [
   { key: 'tous', label: 'Tous' },
-  { key: 'cours', label: 'Cours' },
-  { key: 'stage', label: 'Stage' },
+  { key: 'stage', label: categoryLabels.stage },
+  { key: 'cours', label: categoryLabels.cours },
 ]
 
 export default function ProjectsSection() {
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
             className="mx-auto mt-4 max-w-lg text-lg"
             style={{ color: 'var(--color-text-secondary)' }}
           >
-            Découvrez les projets que j'ai réalisés en cours et en stage.
+            Découvrez les projets que j'ai réalisés en formation et en entreprise.
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function ProjectsSection() {
                       color: 'var(--color-accent)',
                     }}
                   >
-                    {project.category}
+                    {categoryLabels[project.category]}
                   </span>
 
                   {/* Title */}
